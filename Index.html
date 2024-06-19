@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Signal Example</title>
+</head>
+<body>
+    <h1>Sound Signal Example</h1>
+    <button onclick="playSound()">Play Sound</button>
+    <audio id="sound">
+        <source src="recordings_withoutRev\example_5_wavs_files_withoutRev_TimeVaryingNoise\Net.wav" type="audio/wav">
+        <!-- Include additional source tags for different formats if needed -->
+        Your browser does not support the audio element.
+    </audio>
+    
+    <script>
+        function playSound() {
+            var sound = document.getElementById("sound");
+            sound.play();
+        }
+    </script>
+</body>
+</html>

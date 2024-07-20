@@ -12,6 +12,9 @@
 
 ![](ExNet_BF_PF_Net.PNG)
 
+## Description 
+This repository contains the code for the paper "ExNet-BF-PF: Explainable DNN-based Beamformer with Postfilter"
+
 ## Authors
 Adi Cohen, Daniel Wong, Jung-Suk Lee and Sharon Gannot
 

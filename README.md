@@ -13,7 +13,10 @@
 ![](ExNet_BF_PF_Net.PNG)
 
 ## Description 
-This repository contains the code for the paper "ExNet-BF-PF: Explainable DNN-based Beamformer with Postfilter"
+This repository contains the code for the paper "ExNet-BF-PF: Explainable DNN-based Beamformer with Postfilter".
+
+## Demo Page
+The [demo page](https://exnet-bf-pf.github.io/) presents audio test samples along with their spectrograms, showcasing a comparison between our proposed method, "ExNet-BF+PF", and other competing methods. 
 
 ## Authors
 Adi Cohen, Daniel Wong, Jung-Suk Lee and Sharon Gannot
@@ -33,5 +36,4 @@ functionality, thereby enhancing our understanding of its overall performance.
 Experimental results demonstrate that our approach is not only straightforward to train but also 
 yields superior results, obviating the necessity for prior knowledge of the speaker's activity.
 
-## Demo Page
-The [demo page](https://exnet-bf-pf.github.io/) presents audio test samples along with their spectrograms, showcasing a comparison between our proposed method, "ExNet-BF+PF", and other competing methods. 
+

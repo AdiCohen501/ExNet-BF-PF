@@ -1,0 +1,64 @@
+SavedModel: 1 # Load of a trained model 
+debug: 0      # Print debug massages
+
+# =========== Parameters ===========
+params:
+  win_length: 512             # The length of the window for STFT.
+  R: ${params.win_length}//4  # hop_length - the length of the non-intersecting portion of window length. 
+  T: 4                        # The length of the signal in the time domain 
+  M: 8                        # Number of microphones
+  fs: 16000                   # Sample rate
+  mic_ref: 4                  # Reference microphone index
+  EnableCost: 1               # Flag to enable regularization term in the loss function
+  
+modelParams:
+  EnableSkipAttention: 1      # Flag to enable attention in the skip connections
+  activationSatge1: tanh      # Activation fnction at the end of the UNET in stage1
+  activationSatge2: sigmoid   # Activation fnction at the end of the UNET in stage2
+  channelsStage1: ${params.M} # Number of input channels for stage1  
+  channelsStage2: 1           # Number of input channels for stage2
+  numFeatures:  (${params.fs}*${params.T} - ${params.win_length})/(${params.R}) + 1 # Number of features (number of frames) at the end of stage1
+  
+
+# ============= Device =============
+device:
+  device_num: 0  # Device number
+
+# ============ Criterion ============
+loss:
+  loss: L1 # Loss function: L1; 
+  norm: 0  # Normalization flag: If to normalize the inputs to the function by using alpha = dot(x_hat,x)/dot(x,x)
+
+# ========== data-sets ==============
+# Define main paths for datasets, models, and special cases
+data_set_path: /Dataset/Non-Reverberant Environment/Standard # Main path of the dataset
+model_path:    /Models                                       # Main path of the model
+folder_name:   /Results_Non_Reverberant_Environment          # The main name of the results folder 
+
+paths: 
+  rev_env: False                                  # False -> Non-Reverberant Environment; True->Reverberant Environment
+  train_path:     ${data_set_path}/               # The path of the training dataset 
+  test_path:      ${data_set_path}/               # The path of the testing dataset 
+  results_path:   ${folder_name}/                 # Path to store general results
+  modelData_path: ${model_path}/                  # Path to store/load model data
+  log_path:       /logs/${folder_name}/           # Path to store logs
+
+# =========== Model HP ==============
+model_hp:
+  train_size_spilt: 0.75      # Training size split
+  val_size_spilt: 0.25        # Validation size split
+  batchSize: 16               # Number of samples in a mini-batch
+  epochs: 100                 # Maximum number of iterations   
+  data_loader_shuffle: True   # Flag to shuffle data in data loader (train & val)
+  test_loader_shuffle: False  # Flag to shuffle data in test loader
+
+# ============ Optimizer ============
+optimizer:
+  optimizer: Adam     # Optimizer type
+  learning_rate: 1e-4 # Initial learning rate
+  weight_decay: 1e-2  # Weight_decay
+
+# ========== Hydra config ==========
+hydra:
+  run:
+    dir: outputs_${loss.loss}/${now:%Y-%m-%d}/${now:%H-%M-%S}

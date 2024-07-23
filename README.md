@@ -48,10 +48,10 @@ The dataset includes signals with different types of noise generated for each en
 
 Further details on the dataset creation process are described in the accompanying article.
 You can find examples of all dataset types at the following link:
-[Dataset Examples](https://drive.google.com/drive/folders/1EzqU7MO1HYvsyF4GJG_BNWJnOIC96Hgo?usp=drive_link)
+[Dataset Examples](https://drive.google.com/drive/folders/1EzqU7MO1HYvsyF4GJG_BNWJnOIC96Hgo?usp=sharing)
 
 ## Pretrained Models
 We offer pre-trained weights for both reverberant and non-reverberant environments.
 You can download the pre-trained weights from the following link:
-[Models](https://drive.google.com/drive/folders/1MxUU3xrG22Bow9SdJm-A0cQd7xfcvhmc?usp=drive_link)
+[Models](https://drive.google.com/drive/folders/1MxUU3xrG22Bow9SdJm-A0cQd7xfcvhmc?usp=sharing)
 

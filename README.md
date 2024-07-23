@@ -51,7 +51,7 @@ You can find examples of all dataset types at the following link:
 [Dataset Examples](https://drive.google.com/drive/folders/1EzqU7MO1HYvsyF4GJG_BNWJnOIC96Hgo?usp=drive_link)
 
 ## Pretrained Models
-We offer pretrained weights for both reverberant and non-reverberant environments. The weights for the reverberant environment include the two-stage training approach described in the article.
-You can download the pretrained weights from the following link:
+We offer pre-trained weights for both reverberant and non-reverberant environments.
+You can download the pre-trained weights from the following link:
 [Models](https://drive.google.com/drive/folders/1MxUU3xrG22Bow9SdJm-A0cQd7xfcvhmc?usp=drive_link)
 
